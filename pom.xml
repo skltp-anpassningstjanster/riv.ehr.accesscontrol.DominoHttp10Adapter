@@ -1,0 +1,166 @@
+<?xml version="1.0"?>
+<!-- This is the System-level Maven POM. Usage: Define all truly common things 
+	for the system here. For example: versions of third-party dependencies used 
+	throughout the system. -->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>org.soitoolkit.commons.poms</groupId>
+		<artifactId>soitoolkit-default-parent</artifactId>
+		<version>0.3.1</version>
+	</parent>
+
+	<groupId>se.skl.skltpservices.dominohttp10adapter</groupId>
+	<artifactId>DominoHttp10Adapter</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<packaging>jar</packaging>
+	<name>${project.artifactId}</name>
+
+	<scm>
+		<connection>http://skltpservices.googlecode.com/svn/AdapterServices/riv.ehr.accesscontrol/DominoHttp10Adapter/trunk</connection>
+		<developerConnection>scm:svn:https://skltpservices.googlecode.com/svn/AdapterServices/riv.ehr.accesscontrol/DominoHttp10Adapter/trunk</developerConnection>
+		<url>http://skltpservices.googlecode.com/svn/AdapterServices/AdapterServices/riv.ehr.accesscontrol/DominoHttp10Adapter/trunk</url>
+	</scm>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<mule.version>2.2.8</mule.version>
+	</properties>
+
+	<modules>
+
+	</modules>
+
+	<dependencies>
+
+		<!-- soi toolkit dependencies -->
+
+		<dependency>
+			<groupId>org.soitoolkit.commons.components</groupId>
+			<artifactId>soitoolkit-commons-mule</artifactId>
+			<version>${soitoolkit.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.soitoolkit.commons.components</groupId>
+			<artifactId>soitoolkit-commons-log</artifactId>
+			<version>${soitoolkit.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.soitoolkit.commons.poms.mule-dependencies</groupId>
+			<artifactId>soitoolkit-mule-2.2.8-dependencies</artifactId>
+			<version>${soitoolkit.version}</version>
+		</dependency>
+
+		<!-- Mule dependencies -->
+
+		<dependency>
+			<groupId>org.mule</groupId>
+			<artifactId>mule-core</artifactId>
+			<version>${mule.version}</version>
+		</dependency>
+
+		<!-- log4j -->
+
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<exclusions>
+				<exclusion>
+					<groupId>com.sun.jdmk</groupId>
+					<artifactId>jmxtools</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>com.sun.jmx</groupId>
+					<artifactId>jmxri</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>javax.jms</groupId>
+					<artifactId>jms</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<exclusions>
+				<exclusion>
+					<groupId>com.sun.jdmk</groupId>
+					<artifactId>jmxtools</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>com.sun.jmx</groupId>
+					<artifactId>jmxri</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>javax.jms</groupId>
+					<artifactId>jms</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+	</dependencies>
+
+	<build>
+		<resources>
+			<resource>
+				<directory>${basedir}/src/main/resources</directory>
+			</resource>
+			<resource>
+				<directory>${basedir}/src/main/app</directory>
+			</resource>
+		</resources>
+		<testResources>
+			<testResource>
+				<directory>${basedir}/src/test/resources</directory>
+			</testResource>
+			<testResource>
+				<directory>${basedir}/src/environment</directory>
+			</testResource>
+		</testResources>
+
+		<plugins>
+			<plugin>
+				<artifactId>maven-jar-plugin</artifactId>
+				<configuration>
+					<!-- if no classifier is declared, then a mvn install results in a file 
+						in the local repo: ic2-1.0.0-SNAPSHOT.mule which is a jar-file - only strangely 
+						named and with a bad extension -->
+					<!-- <classifier>core</classifier> -->
+					<excludes>
+						<exclude>log4j.xml</exclude>
+					</excludes>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
