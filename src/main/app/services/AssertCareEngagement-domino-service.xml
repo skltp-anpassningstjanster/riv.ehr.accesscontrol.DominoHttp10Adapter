@@ -10,20 +10,20 @@
                http://www.mulesource.org/schema/mule/http/2.2 http://www.mulesource.org/schema/mule/http/2.2/mule-http.xsd">
 
 	<https:endpoint name="outboundEndpoint" synchronous="true"
-		address="${outbound.endpoint.dominohttpadapter}" connector-ref="DominoHttp10Adapter-https-connector">
+		address="${outbound.endpoint.dominohttpadapter}" >
 		<message-properties-transformer>
 			<add-message-property key="http.version" value="${http.version}" />
 		</message-properties-transformer>
 	</https:endpoint>
-
+	
 	<model name="AssertCareEngagement-model">
 		<service name="testComponent">
 			<inbound>
-				<http:inbound-endpoint address="${inbound.endpoint.dominohttpadapter}" />
+				<http:inbound-endpoint address="${inbound.endpoint.dominohttpadapter}" synchronous="true" />
 			</inbound>
 			<outbound>
 				<pass-through-router>
-					<https:outbound-endpoint ref="outboundEndpoint" />
+					<https:outbound-endpoint ref="outboundEndpoint" synchronous="true"/>
 				</pass-through-router>
 			</outbound>
 		</service>
