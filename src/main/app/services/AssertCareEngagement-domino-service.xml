@@ -9,21 +9,118 @@
                http://www.mulesource.org/schema/mule/cxf/2.2  http://www.mulesource.org/schema/mule/cxf/2.2/mule-cxf.xsd
                http://www.mulesource.org/schema/mule/http/2.2 http://www.mulesource.org/schema/mule/http/2.2/mule-http.xsd">
 
-	<https:endpoint name="outboundEndpoint" synchronous="true"
-		address="${outbound.endpoint.dominohttpadapter}" >
-		<message-properties-transformer>
-			<add-message-property key="http.version" value="${http.version}" />
-		</message-properties-transformer>
-	</https:endpoint>
-	
+
+	<message-properties-transformer name="httpVersionTransformer">
+		<add-message-property key="http.version" value="${http.version}" />
+	</message-properties-transformer>
+
 	<model name="AssertCareEngagement-model">
-		<service name="testComponent">
+		<service name="AssertCareEngagement-domino-http-adapter-1">
 			<inbound>
-				<http:inbound-endpoint address="${inbound.endpoint.dominohttpadapter}" synchronous="true" />
+				<http:inbound-endpoint address="${inbound.endpoint.dominohttpadapter.1}" synchronous="true" />
 			</inbound>
 			<outbound>
 				<pass-through-router>
-					<https:outbound-endpoint ref="outboundEndpoint" synchronous="true"/>
+					<https:outbound-endpoint synchronous="true" address="${outbound.endpoint.dominohttpadapter.1}" transformer-refs="httpVersionTransformer"/>
+				</pass-through-router>
+			</outbound>
+		</service>
+		
+		<service name="AssertCareEngagement-domino-http-adapter-2">
+			<inbound>
+				<http:inbound-endpoint address="${inbound.endpoint.dominohttpadapter.2}" synchronous="true" />
+			</inbound>
+			<outbound>
+				<pass-through-router>
+					<https:outbound-endpoint synchronous="true" address="${outbound.endpoint.dominohttpadapter.2}" transformer-refs="httpVersionTransformer"/>
+				</pass-through-router>
+			</outbound>
+		</service>
+		
+		<service name="AssertCareEngagement-domino-http-adapter-3">
+			<inbound>
+				<http:inbound-endpoint address="${inbound.endpoint.dominohttpadapter.3}" synchronous="true" />
+			</inbound>
+			<outbound>
+				<pass-through-router>
+					<https:outbound-endpoint synchronous="true" address="${outbound.endpoint.dominohttpadapter.3}" transformer-refs="httpVersionTransformer"/>
+				</pass-through-router>
+			</outbound>
+		</service>
+		
+		<service name="AssertCareEngagement-domino-http-adapter-4">
+			<inbound>
+				<http:inbound-endpoint address="${inbound.endpoint.dominohttpadapter.4}" synchronous="true" />
+			</inbound>
+			<outbound>
+				<pass-through-router>
+					<https:outbound-endpoint synchronous="true" address="${outbound.endpoint.dominohttpadapter.4}" transformer-refs="httpVersionTransformer"/>
+				</pass-through-router>
+			</outbound>
+		</service>
+		
+		<service name="AssertCareEngagement-domino-http-adapter-5">
+			<inbound>
+				<http:inbound-endpoint address="${inbound.endpoint.dominohttpadapter.5}" synchronous="true" />
+			</inbound>
+			<outbound>
+				<pass-through-router>
+					<https:outbound-endpoint synchronous="true" address="${outbound.endpoint.dominohttpadapter.5}" transformer-refs="httpVersionTransformer"/>
+				</pass-through-router>
+			</outbound>
+		</service>
+		
+		<service name="AssertCareEngagement-domino-http-adapter-6">
+			<inbound>
+				<http:inbound-endpoint address="${inbound.endpoint.dominohttpadapter.6}" synchronous="true" />
+			</inbound>
+			<outbound>
+				<pass-through-router>
+					<https:outbound-endpoint synchronous="true" address="${outbound.endpoint.dominohttpadapter.6}" transformer-refs="httpVersionTransformer"/>
+				</pass-through-router>
+			</outbound>
+		</service>
+		
+		<service name="AssertCareEngagement-domino-http-adapter-7">
+			<inbound>
+				<http:inbound-endpoint address="${inbound.endpoint.dominohttpadapter.7}" synchronous="true" />
+			</inbound>
+			<outbound>
+				<pass-through-router>
+					<https:outbound-endpoint synchronous="true" address="${outbound.endpoint.dominohttpadapter.7}" transformer-refs="httpVersionTransformer"/>
+				</pass-through-router>
+			</outbound>
+		</service>
+		
+		<service name="AssertCareEngagement-domino-http-adapter-8">
+			<inbound>
+				<http:inbound-endpoint address="${inbound.endpoint.dominohttpadapter.8}" synchronous="true" />
+			</inbound>
+			<outbound>
+				<pass-through-router>
+					<https:outbound-endpoint synchronous="true" address="${outbound.endpoint.dominohttpadapter.8}" transformer-refs="httpVersionTransformer"/>
+				</pass-through-router>
+			</outbound>
+		</service>
+		
+		<service name="AssertCareEngagement-domino-http-adapter-9">
+			<inbound>
+				<http:inbound-endpoint address="${inbound.endpoint.dominohttpadapter.9}" synchronous="true" />
+			</inbound>
+			<outbound>
+				<pass-through-router>
+					<https:outbound-endpoint synchronous="true" address="${outbound.endpoint.dominohttpadapter.9}" transformer-refs="httpVersionTransformer"/>
+				</pass-through-router>
+			</outbound>
+		</service>
+		
+		<service name="AssertCareEngagement-domino-http-adapter-10">
+			<inbound>
+				<http:inbound-endpoint address="${inbound.endpoint.dominohttpadapter.10}" synchronous="true" />
+			</inbound>
+			<outbound>
+				<pass-through-router>
+					<https:outbound-endpoint synchronous="true" address="${outbound.endpoint.dominohttpadapter.10}" transformer-refs="httpVersionTransformer"/>
 				</pass-through-router>
 			</outbound>
 		</service>
