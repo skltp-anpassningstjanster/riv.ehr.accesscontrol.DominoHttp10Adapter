@@ -13,14 +13,14 @@
 
 	<groupId>se.skl.skltpservices.dominohttp10adapter</groupId>
 	<artifactId>DominoHttp10Adapter</artifactId>
-	<version>1.0.0</version>
+	<version>1.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 	<name>${project.artifactId}</name>
 
 	<scm>
-		<connection>http://skltpservices.googlecode.com/svn/AdapterServices/riv.ehr.accesscontrol/DominoHttp10Adapter/tags/DominoHttp10Adapter-1.0.0</connection>
-		<developerConnection>scm:svn:https://skltpservices.googlecode.com/svn/AdapterServices/riv.ehr.accesscontrol/DominoHttp10Adapter/tags/DominoHttp10Adapter-1.0.0</developerConnection>
-		<url>http://skltpservices.googlecode.com/svn/AdapterServices/AdapterServices/riv.ehr.accesscontrol/DominoHttp10Adapter/tags/DominoHttp10Adapter-1.0.0</url>
+		<connection>http://skltpservices.googlecode.com/svn/AdapterServices/riv.ehr.accesscontrol/DominoHttp10Adapter/trunk</connection>
+		<developerConnection>scm:svn:https://skltpservices.googlecode.com/svn/AdapterServices/riv.ehr.accesscontrol/DominoHttp10Adapter/trunk</developerConnection>
+		<url>http://skltpservices.googlecode.com/svn/AdapterServices/AdapterServices/riv.ehr.accesscontrol/DominoHttp10Adapter/trunk</url>
 	</scm>
 
 	<properties>
