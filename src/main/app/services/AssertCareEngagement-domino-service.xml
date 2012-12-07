@@ -17,7 +17,7 @@
 	<model name="AssertCareEngagement-model">
 		<service name="AssertCareEngagement-domino-http-adapter-1">
 			<inbound>
-				<http:inbound-endpoint address="${inbound.endpoint.dominohttpadapter.1}" synchronous="true" />
+				<https:inbound-endpoint address="${inbound.endpoint.dominohttpadapter.1}" synchronous="true" />
 			</inbound>
 			<outbound>
 				<pass-through-router>
@@ -28,7 +28,7 @@
 		
 		<service name="AssertCareEngagement-domino-http-adapter-2">
 			<inbound>
-				<http:inbound-endpoint address="${inbound.endpoint.dominohttpadapter.2}" synchronous="true" />
+				<https:inbound-endpoint address="${inbound.endpoint.dominohttpadapter.2}" synchronous="true" />
 			</inbound>
 			<outbound>
 				<pass-through-router>
@@ -39,7 +39,7 @@
 		
 		<service name="AssertCareEngagement-domino-http-adapter-3">
 			<inbound>
-				<http:inbound-endpoint address="${inbound.endpoint.dominohttpadapter.3}" synchronous="true" />
+				<https:inbound-endpoint address="${inbound.endpoint.dominohttpadapter.3}" synchronous="true" />
 			</inbound>
 			<outbound>
 				<pass-through-router>
@@ -50,7 +50,7 @@
 		
 		<service name="AssertCareEngagement-domino-http-adapter-4">
 			<inbound>
-				<http:inbound-endpoint address="${inbound.endpoint.dominohttpadapter.4}" synchronous="true" />
+				<https:inbound-endpoint address="${inbound.endpoint.dominohttpadapter.4}" synchronous="true" />
 			</inbound>
 			<outbound>
 				<pass-through-router>
@@ -61,7 +61,7 @@
 		
 		<service name="AssertCareEngagement-domino-http-adapter-5">
 			<inbound>
-				<http:inbound-endpoint address="${inbound.endpoint.dominohttpadapter.5}" synchronous="true" />
+				<https:inbound-endpoint address="${inbound.endpoint.dominohttpadapter.5}" synchronous="true" />
 			</inbound>
 			<outbound>
 				<pass-through-router>
@@ -72,7 +72,7 @@
 		
 		<service name="AssertCareEngagement-domino-http-adapter-6">
 			<inbound>
-				<http:inbound-endpoint address="${inbound.endpoint.dominohttpadapter.6}" synchronous="true" />
+				<https:inbound-endpoint address="${inbound.endpoint.dominohttpadapter.6}" synchronous="true" />
 			</inbound>
 			<outbound>
 				<pass-through-router>
@@ -83,7 +83,7 @@
 		
 		<service name="AssertCareEngagement-domino-http-adapter-7">
 			<inbound>
-				<http:inbound-endpoint address="${inbound.endpoint.dominohttpadapter.7}" synchronous="true" />
+				<https:inbound-endpoint address="${inbound.endpoint.dominohttpadapter.7}" synchronous="true" />
 			</inbound>
 			<outbound>
 				<pass-through-router>
@@ -94,7 +94,7 @@
 		
 		<service name="AssertCareEngagement-domino-http-adapter-8">
 			<inbound>
-				<http:inbound-endpoint address="${inbound.endpoint.dominohttpadapter.8}" synchronous="true" />
+				<https:inbound-endpoint address="${inbound.endpoint.dominohttpadapter.8}" synchronous="true" />
 			</inbound>
 			<outbound>
 				<pass-through-router>
@@ -105,7 +105,7 @@
 		
 		<service name="AssertCareEngagement-domino-http-adapter-9">
 			<inbound>
-				<http:inbound-endpoint address="${inbound.endpoint.dominohttpadapter.9}" synchronous="true" />
+				<https:inbound-endpoint address="${inbound.endpoint.dominohttpadapter.9}" synchronous="true" />
 			</inbound>
 			<outbound>
 				<pass-through-router>
@@ -116,7 +116,7 @@
 		
 		<service name="AssertCareEngagement-domino-http-adapter-10">
 			<inbound>
-				<http:inbound-endpoint address="${inbound.endpoint.dominohttpadapter.10}" synchronous="true" />
+				<https:inbound-endpoint address="${inbound.endpoint.dominohttpadapter.10}" synchronous="true" />
 			</inbound>
 			<outbound>
 				<pass-through-router>
