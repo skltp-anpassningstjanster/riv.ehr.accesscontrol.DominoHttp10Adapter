@@ -49,18 +49,46 @@
 			<version>${soitoolkit.version}</version>
 		</dependency>
 
-		<dependency>
-			<groupId>org.soitoolkit.commons.poms.mule-dependencies</groupId>
-			<artifactId>soitoolkit-mule-2.2.8-dependencies</artifactId>
-			<version>${soitoolkit.version}</version>
-		</dependency>
-
 		<!-- Mule dependencies -->
 
 		<dependency>
 			<groupId>org.mule</groupId>
 			<artifactId>mule-core</artifactId>
 			<version>${mule.version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.mule.modules</groupId>
+			<artifactId>mule-module-spring-config</artifactId>
+			<version>${mule.version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.mule.transports</groupId>
+			<artifactId>mule-transport-servlet</artifactId>
+			<version>${mule.version}</version>
+		</dependency>
+		
+		<dependency>
+<!-- 		  	  commonretrypolicies from muleforge: -->
+<!-- 			  http://www.mulesoft.org/documentation/display/COMMONRETRYPOLICIES/Home -->
+<!-- 			  version 2.2.1 is for mule 2.2.x  -->
+			<groupId>org.mule.modules</groupId>
+			<artifactId>commonretrypolicies</artifactId>
+			<version>2.2.1</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.mule.modules</groupId>
+			<artifactId>mule-module-client</artifactId>
+			<version>${mule.version}</version>
+		</dependency>
+		
+		<!-- Dependencies for the servlet transport -->
+		<dependency>
+			<groupId>org.mortbay.jetty</groupId>
+			<artifactId>servlet-api-2.5</artifactId>
+			<version>6.1.11</version>
 		</dependency>
 
 		<!-- log4j -->
