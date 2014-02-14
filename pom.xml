@@ -18,14 +18,14 @@ DON'T CHANGE THE CONTENT OF THIS COMMENT UNLESS YOU REALLY KNOW WHAT YOU ARE DOI
     
     <groupId>se.skltp.adapterservices.ehr.accesscontrol</groupId>
     <artifactId>DominoHttp10Adapter</artifactId>
-    <version>2.0.0-RC1</version>
+    <version>2.0.0-RC2-SNAPSHOT</version>
     <packaging>mule</packaging>
     <name>DominoHttp10Adapter</name>
 
 	<scm>
-		<connection>http://skltpservices.googlecode.com/svn/AdapterServices/riv.ehr.accesscontrol/DominoHttp10Adapter/tags/DominoHttp10Adapter-2.0.0-RC1</connection>
-		<developerConnection>scm:svn:https://skltpservices.googlecode.com/svn/AdapterServices/riv.ehr.accesscontrol/DominoHttp10Adapter/tags/DominoHttp10Adapter-2.0.0-RC1</developerConnection>
-		<url>http://skltpservices.googlecode.com/svn/AdapterServices/riv.ehr.accesscontrol/DominoHttp10Adapter/tags/DominoHttp10Adapter-2.0.0-RC1</url>
+		<connection>http://skltpservices.googlecode.com/svn/AdapterServices/riv.ehr.accesscontrol/DominoHttp10Adapter/trunk</connection>
+		<developerConnection>scm:svn:https://skltpservices.googlecode.com/svn/AdapterServices/riv.ehr.accesscontrol/DominoHttp10Adapter/trunk</developerConnection>
+		<url>http://skltpservices.googlecode.com/svn/AdapterServices/riv.ehr.accesscontrol/DominoHttp10Adapter/trunk</url>
 	</scm>
 
     
