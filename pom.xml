@@ -6,10 +6,7 @@ DON'T CHANGE THE CONTENT OF THIS COMMENT UNLESS YOU REALLY KNOW WHAT YOU ARE DOI
 [soi-toolkit.gen.createDate=2014-01-21T14:45:03.753+01:00]
 [soi-toolkit.gen.artifactId=DominoHttp10Adapter]
 -->
-<project 
-	xmlns="http://maven.apache.org/POM/4.0.0" 
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
 
@@ -21,14 +18,14 @@ DON'T CHANGE THE CONTENT OF THIS COMMENT UNLESS YOU REALLY KNOW WHAT YOU ARE DOI
     
     <groupId>se.skltp.adapterservices.ehr.accesscontrol</groupId>
     <artifactId>DominoHttp10Adapter</artifactId>
-    <version>2.0.0-SNAPSHOT</version>
+    <version>2.0.0-RC1</version>
     <packaging>mule</packaging>
     <name>DominoHttp10Adapter</name>
 
 	<scm>
-		<connection>http://skltpservices.googlecode.com/svn/AdapterServices/riv.ehr.accesscontrol/DominoHttp10Adapter/trunk</connection>
-		<developerConnection>scm:svn:https://skltpservices.googlecode.com/svn/AdapterServices/riv.ehr.accesscontrol/DominoHttp10Adapter/trunk</developerConnection>
-		<url>http://skltpservices.googlecode.com/svn/AdapterServices/riv.ehr.accesscontrol/DominoHttp10Adapter/trunk</url>
+		<connection>http://skltpservices.googlecode.com/svn/AdapterServices/riv.ehr.accesscontrol/DominoHttp10Adapter/tags/DominoHttp10Adapter-2.0.0-RC1</connection>
+		<developerConnection>scm:svn:https://skltpservices.googlecode.com/svn/AdapterServices/riv.ehr.accesscontrol/DominoHttp10Adapter/tags/DominoHttp10Adapter-2.0.0-RC1</developerConnection>
+		<url>http://skltpservices.googlecode.com/svn/AdapterServices/riv.ehr.accesscontrol/DominoHttp10Adapter/tags/DominoHttp10Adapter-2.0.0-RC1</url>
 	</scm>
 
     
