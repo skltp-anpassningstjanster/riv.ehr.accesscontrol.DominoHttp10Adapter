@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project activeEnvironment="Default" name="DominoHttp10Adapter" resourceRoot="${projectDir}" soapui-version="4.6.4" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="AssertCareEngagementResponderBinding" type="wsdl" bindingName="{urn:riv:ehr:accesscontrol:AssertCareEngagement:1:rivtabp20}AssertCareEngagementResponderBinding" soapVersion="1_1" anonymous="optional" definition="TD_EHR_ACCESSCONTROL_1_0_2_R/schemas/interactions/AssertCareEngagementInteraction/AssertCareEngagementInteraction_1.0_RIVTABP20.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:/Users/magnus/Documents/temp/_soi_toolkit_gen_out/DominoHttp10Adapter/src/test/resources/soapui/TD_EHR_ACCESSCONTROL_1_0_2_R/schemas/interactions/AssertCareEngagementInteraction/AssertCareEngagementInteraction_1.0_RIVTABP20.wsdl"><con:part><con:url>file:/Users/magnus/Documents/temp/_soi_toolkit_gen_out/DominoHttp10Adapter/src/test/resources/soapui/TD_EHR_ACCESSCONTROL_1_0_2_R/schemas/interactions/AssertCareEngagementInteraction/AssertCareEngagementInteraction_1.0_RIVTABP20.wsdl</con:url><con:content><![CDATA[<!--Licensed to Inera AB under one
+ or more contributor license agreements. See the NOTICE file
+ distributed with this work for additional information
+ regarding copyright ownership. inera AB licenses this file
+ to you under the Apache License, Version 2.0 (the
+ "License"); you may not use this file except in compliance
+ with the License. You may obtain a copy of the License at
+
+ http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing,
+ software distributed under the License is distributed on an
+ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ KIND, either express or implied. See the License for the
+ specific language governing permissions and limitations
+ under the License.-->
+<wsdl:definitions name="AssertCareEngagementInteraction" targetNamespace="urn:riv:ehr:accesscontrol:AssertCareEngagement:1:rivtabp20" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:wsa="http://www.w3.org/2005/08/addressing" xmlns:tjsr="urn:riv:ehr:accesscontrol:AssertCareEngagementResponder:1" xmlns:tjsi="urn:riv:ehr:accesscontrol:AssertCareEngagementInitiator:1" xmlns:tns="urn:riv:ehr:accesscontrol:AssertCareEngagement:1:rivtabp20">
+  <xs:annotation>
+    <xs:documentation>Tjänsteinteraktionens namn: AssertCareEngagementInteraction
+			 Beskrivning: 
+			   The responder determines whether a care professional has a care relationship with a patient such that access to health records of external healthcare fascilities would be justified
+			 Revisioner: 
+			 Tjänstedomän: ehr:accesscontrol
+			 Tjänsteinteraktionstyp: Fråga-Svar
+			 RIV Teknisk Anvisning: RIVTABP20
+			 Förvaltas av: Inera AB</xs:documentation>
+  </xs:annotation>
+  <wsdl:types>
+    <xs:schema targetNamespace="urn:riv:ehr:accesscontrol:AssertCareEngagement:1:rivtabp20">
+      <xs:import schemaLocation="AssertCareEngagementResponder_1.0.xsd" namespace="urn:riv:ehr:accesscontrol:AssertCareEngagementResponder:1"/>
+      <xs:import schemaLocation="../../core_components/ws-addressing-1.0.xsd" namespace="http://www.w3.org/2005/08/addressing"/>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="AssertCareEngagementRequest">
+    <wsdl:part name="LogicalAddress" element="wsa:To">
+      <xs:annotation>
+        <xs:documentation>The HSAid of the healthcare_facility on which behalf the employee is acting in her profession</xs:documentation>
+      </xs:annotation>
+    </wsdl:part>
+    <wsdl:part name="parameters" element="tjsr:AssertCareEngagement"/>
+  </wsdl:message>
+  <wsdl:message name="AssertCareEngagementResponse">
+    <wsdl:part name="parameters" element="tjsr:AssertCareEngagementResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="AssertCareEngagementResponderInterface">
+    <wsdl:operation name="AssertCareEngagement">
+      <wsdl:input message="tns:AssertCareEngagementRequest"/>
+      <wsdl:output message="tns:AssertCareEngagementResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="AssertCareEngagementResponderBinding" type="tns:AssertCareEngagementResponderInterface">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="AssertCareEngagement">
+      <soap:operation soapAction="urn:riv:ehr:accesscontrol:AssertCareEngagementResponder:1:AssertCareEngagement" style="document"/>
+      <wsdl:input>
+        <soap:header use="literal" message="tns:AssertCareEngagementRequest" part="LogicalAddress"/>
+        <soap:body use="literal" parts="parameters"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AssertCareEngagementResponderService">
+    <wsdl:port name="AssertCareEngagementResponderPort" binding="tns:AssertCareEngagementResponderBinding">
+      <soap:address location="http://tempuri.org"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>file:/Users/magnus/Documents/temp/_soi_toolkit_gen_out/DominoHttp10Adapter/src/test/resources/soapui/TD_EHR_ACCESSCONTROL_1_0_2_R/schemas/interactions/AssertCareEngagementInteraction/AssertCareEngagementResponder_1.0.xsd</con:url><con:content><![CDATA[<!--Licensed to Inera AB under one
+ or more contributor license agreements. See the NOTICE file
+ distributed with this work for additional information
+ regarding copyright ownership. inera AB licenses this file
+ to you under the Apache License, Version 2.0 (the
+ "License"); you may not use this file except in compliance
+ with the License. You may obtain a copy of the License at
+
+ http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing,
+ software distributed under the License is distributed on an
+ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ KIND, either express or implied. See the License for the
+ specific language governing permissions and limitations
+ under the License.-->
+<xs:schema targetNamespace="urn:riv:ehr:accesscontrol:AssertCareEngagementResponder:1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="urn:riv:ehr:accesscontrol:AssertCareEngagementResponder:1" xmlns:core="urn:riv:ehr:accesscontrol:1">
+  <xs:import schemaLocation="../../core_components/ehr_accesscontrol_1.0.xsd" namespace="urn:riv:ehr:accesscontrol:1"/>
+  <xs:element name="AssertCareEngagement" type="tns:AssertCareEngagementType"/>
+  <xs:element name="AssertCareEngagementResponse" type="tns:AssertCareEngagementResponseType"/>
+  <xs:complexType name="AssertCareEngagementType">
+    <xs:annotation>
+      <xs:documentation>Request parameters of the AssertCareEngagement service</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="performer" type="core:HsaIdType">
+        <xs:annotation>
+          <xs:documentation>HSAId of the performer (healthcare professional) requesting access to EHR records of the subject of care.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="subjectOfCareId" type="core:SubjectOfCareIdType">
+        <xs:annotation>
+          <xs:documentation>Id of the subject of care of the EHR for which access is requested by the performer.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="careUnitHsaIdentity" type="core:HsaIdType">
+        <xs:annotation>
+          <xs:documentation>HSAId of care unit where the performer is in duty when requesting access to EHR records of the subject of care.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="careGiverHsaIdentity" type="core:HsaIdType">
+        <xs:annotation>
+          <xs:documentation>HSAId of the organisation operating the healthcare_facility</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AssertCareEngagementResponseType">
+    <xs:sequence>
+      <xs:annotation>
+        <xs:documentation>Response message of the AssertCareEngagement service</xs:documentation>
+      </xs:annotation>
+      <xs:element name="HasCareEngagement" type="xs:boolean">
+        <xs:annotation>
+          <xs:documentation>true if care engagement is asserted, else false</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/Users/magnus/Documents/temp/_soi_toolkit_gen_out/DominoHttp10Adapter/src/test/resources/soapui/TD_EHR_ACCESSCONTROL_1_0_2_R/schemas/core_components/ehr_accesscontrol_1.0.xsd</con:url><con:content><![CDATA[<!--Licensed to Inera AB under one
+ or more contributor license agreements. See the NOTICE file
+ distributed with this work for additional information
+ regarding copyright ownership. inera AB licenses this file
+ to you under the Apache License, Version 2.0 (the
+ "License"); you may not use this file except in compliance
+ with the License. You may obtain a copy of the License at
+
+ http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing,
+ software distributed under the License is distributed on an
+ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ KIND, either express or implied. See the License for the
+ specific language governing permissions and limitations
+ under the License.-->
+<xs:schema targetNamespace="urn:riv:ehr:accesscontrol:1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="urn:riv:ehr:accesscontrol:1">
+  <xs:simpleType name="DT">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[1-9]{1}[0-9]{3}(0[1-9]{1}|1[0-2]{1})([0-2]{1}[0-9]{1}|3[0-1]{1})">
+        <xs:annotation>
+          <xs:documentation>ISO 8601 datetime format (ASN.1): YYYYMMDD</xs:documentation>
+        </xs:annotation>
+      </xs:pattern>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="HsaIdType">
+    <xs:restriction base="xs:token">
+      <xs:maxLength value="64"/>
+      <xs:pattern value="[(\p{L})0-9\-]*"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="SubjectOfCareIdType">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="^[0-9]{8}[0-9pPtTfF][0-9]{3}$"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/Users/magnus/Documents/temp/_soi_toolkit_gen_out/DominoHttp10Adapter/src/test/resources/soapui/TD_EHR_ACCESSCONTROL_1_0_2_R/schemas/core_components/ws-addressing-1.0.xsd</con:url><con:content><![CDATA[<!--W3C XML Schema defined in the Web Services Addressing 1.0 specification
+    http://www.w3.org/TR/ws-addr-core
+
+   Copyright 2005 World Wide Web Consortium,
+
+   (Massachusetts Institute of Technology, European Research Consortium for
+   Informatics and Mathematics, Keio University). All Rights Reserved. This
+   work is distributed under the W3C Software License [1] in the hope that
+   it will be useful, but WITHOUT ANY WARRANTY; without even the implied
+   warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+   [1] http://www.w3.org/Consortium/Legal/2002/copyright-software-20021231
+
+   $Id: ws-addr.xsd,v 1.4 2008/07/14 18:48:47 plehegar Exp $-->
+<xs:schema targetNamespace="http://www.w3.org/2005/08/addressing" blockDefault="#all" elementFormDefault="qualified" finalDefault="" attributeFormDefault="unqualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.w3.org/2005/08/addressing">
+  <!--Constructs from the WS-Addressing Core-->
+  <xs:element name="EndpointReference" type="tns:EndpointReferenceType"/>
+  <xs:complexType name="EndpointReferenceType" mixed="false">
+    <xs:sequence>
+      <xs:element name="Address" type="tns:AttributedURIType"/>
+      <xs:element name="ReferenceParameters" type="tns:ReferenceParametersType" minOccurs="0"/>
+      <xs:element ref="tns:Metadata" minOccurs="0"/>
+      <xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:anyAttribute namespace="##other" processContents="lax"/>
+  </xs:complexType>
+  <xs:complexType name="ReferenceParametersType" mixed="false">
+    <xs:sequence>
+      <xs:any namespace="##any" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:anyAttribute namespace="##other" processContents="lax"/>
+  </xs:complexType>
+  <xs:element name="Metadata" type="tns:MetadataType"/>
+  <xs:complexType name="MetadataType" mixed="false">
+    <xs:sequence>
+      <xs:any namespace="##any" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:anyAttribute namespace="##other" processContents="lax"/>
+  </xs:complexType>
+  <xs:element name="MessageID" type="tns:AttributedURIType"/>
+  <xs:element name="RelatesTo" type="tns:RelatesToType"/>
+  <xs:complexType name="RelatesToType" mixed="false">
+    <xs:simpleContent>
+      <xs:extension base="xs:anyURI">
+        <xs:attribute name="RelationshipType" type="tns:RelationshipTypeOpenEnum" use="optional" default="http://www.w3.org/2005/08/addressing/reply"/>
+        <xs:anyAttribute namespace="##other" processContents="lax"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="RelationshipTypeOpenEnum">
+    <xs:union memberTypes="tns:RelationshipType xs:anyURI "/>
+  </xs:simpleType>
+  <xs:simpleType name="RelationshipType">
+    <xs:restriction base="xs:anyURI">
+      <xs:enumeration value="http://www.w3.org/2005/08/addressing/reply"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ReplyTo" type="tns:EndpointReferenceType"/>
+  <xs:element name="From" type="tns:EndpointReferenceType"/>
+  <xs:element name="FaultTo" type="tns:EndpointReferenceType"/>
+  <xs:element name="To" type="tns:AttributedURIType"/>
+  <xs:element name="Action" type="tns:AttributedURIType"/>
+  <xs:complexType name="AttributedURIType" mixed="false">
+    <xs:simpleContent>
+      <xs:extension base="xs:anyURI">
+        <xs:anyAttribute namespace="##other" processContents="lax"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <!--Constructs from the WS-Addressing SOAP binding-->
+  <xs:attribute name="IsReferenceParameter" type="xs:boolean"/>
+  <xs:simpleType name="FaultCodesOpenEnumType">
+    <xs:union memberTypes="tns:FaultCodesType xs:QName "/>
+  </xs:simpleType>
+  <xs:simpleType name="FaultCodesType">
+    <xs:restriction base="xs:QName">
+      <xs:enumeration value="tns:InvalidAddressingHeader"/>
+      <xs:enumeration value="tns:InvalidAddress"/>
+      <xs:enumeration value="tns:InvalidEPR"/>
+      <xs:enumeration value="tns:InvalidCardinality"/>
+      <xs:enumeration value="tns:MissingAddressInEPR"/>
+      <xs:enumeration value="tns:DuplicateMessageID"/>
+      <xs:enumeration value="tns:ActionMismatch"/>
+      <xs:enumeration value="tns:MessageAddressingHeaderRequired"/>
+      <xs:enumeration value="tns:DestinationUnreachable"/>
+      <xs:enumeration value="tns:ActionNotSupported"/>
+      <xs:enumeration value="tns:EndpointUnavailable"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="RetryAfter" type="tns:AttributedUnsignedLongType"/>
+  <xs:complexType name="AttributedUnsignedLongType" mixed="false">
+    <xs:simpleContent>
+      <xs:extension base="xs:unsignedLong">
+        <xs:anyAttribute namespace="##other" processContents="lax"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:element name="ProblemHeaderQName" type="tns:AttributedQNameType"/>
+  <xs:complexType name="AttributedQNameType" mixed="false">
+    <xs:simpleContent>
+      <xs:extension base="xs:QName">
+        <xs:anyAttribute namespace="##other" processContents="lax"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:element name="ProblemHeader" type="tns:AttributedAnyType"/>
+  <xs:complexType name="AttributedAnyType" mixed="false">
+    <xs:sequence>
+      <xs:any namespace="##any" processContents="lax" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
+    <xs:anyAttribute namespace="##other" processContents="lax"/>
+  </xs:complexType>
+  <xs:element name="ProblemIRI" type="tns:AttributedURIType"/>
+  <xs:element name="ProblemAction" type="tns:ProblemActionType"/>
+  <xs:complexType name="ProblemActionType" mixed="false">
+    <xs:sequence>
+      <xs:element ref="tns:Action" minOccurs="0"/>
+      <xs:element name="SoapAction" minOccurs="0" type="xs:anyURI"/>
+    </xs:sequence>
+    <xs:anyAttribute namespace="##other" processContents="lax"/>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:11000/tjanstebryggan/dominohttp10adapter/1/AssertCareEngagement/1/rivtabp20</con:endpoint><con:endpoint>http://localhost:8080</con:endpoint></con:endpoints><con:operation isOneWay="false" action="urn:riv:ehr:accesscontrol:AssertCareEngagementResponder:1:AssertCareEngagement" name="AssertCareEngagement" bindingOperationName="AssertCareEngagement" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:11000/tjanstebryggan/dominohttp10adapter/1/AssertCareEngagement/1/rivtabp20</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:add="http://www.w3.org/2005/08/addressing" xmlns:urn="urn:riv:ehr:accesscontrol:AssertCareEngagementResponder:1">
+   <soapenv:Header>
+      <add:To>LA1</add:To>
+   </soapenv:Header>
+   <soapenv:Body>
+      <urn:AssertCareEngagement>
+         <urn:performer>P</urn:performer>
+         <urn:subjectOfCareId>S</urn:subjectOfCareId>
+         <urn:careUnitHsaIdentity>CU</urn:careUnitHsaIdentity>
+         <urn:careGiverHsaIdentity>CG</urn:careGiverHsaIdentity>
+      </urn:AssertCareEngagement>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:riv:ehr:accesscontrol:AssertCareEngagementResponder:1:AssertCareEngagement"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:testSuite name="AssertCareEngagementResponderBinding TestSuite"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="AssertCareEngagement TestCase" searchProperties="true"><con:settings/><con:testStep type="request" name="AssertCareEngagement"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>AssertCareEngagementResponderBinding</con:interface><con:operation>AssertCareEngagement</con:operation><con:request name="AssertCareEngagement"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:11000/tjanstebryggan/dominohttp10adapter/1/AssertCareEngagement/1/rivtabp20</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:add="http://www.w3.org/2005/08/addressing" xmlns:urn="urn:riv:ehr:accesscontrol:AssertCareEngagementResponder:1">
+   <soapenv:Header>
+      <add:To>?</add:To>
+   </soapenv:Header>
+   <soapenv:Body>
+      <urn:AssertCareEngagement>
+         <urn:performer>?</urn:performer>
+         <urn:subjectOfCareId>?</urn:subjectOfCareId>
+         <urn:careUnitHsaIdentity>?</urn:careUnitHsaIdentity>
+         <urn:careGiverHsaIdentity>?</urn:careGiverHsaIdentity>
+         <!--You may enter ANY elements at this point-->
+      </urn:AssertCareEngagement>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:wsaConfig action="urn:riv:ehr:accesscontrol:AssertCareEngagementResponder:1:AssertCareEngagement"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:mockService port="8080" path="/" host="Magnus-MacBook-Pro.local" name="MockService 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-action">false</con:setting><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-version">true</con:setting></con:settings><con:mockOperation name="AssertCareEngagement" interface="AssertCareEngagementResponderBinding" operation="AssertCareEngagement"><con:settings/><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:defaultResponse>Response 1</con:defaultResponse><con:response name="Response 1" encoding="UTF-8" httpResponseStatus=""><con:settings/><con:script/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:riv:ehr:accesscontrol:AssertCareEngagementResponder:1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <urn:AssertCareEngagementResponse>
+         <urn:HasCareEngagement>YES</urn:HasCareEngagement>
+      </urn:AssertCareEngagementResponse>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:riv:ehr:accesscontrol:AssertCareEngagementResponder:1:AssertCareEngagement"/></con:response><con:dispatchConfig/></con:mockOperation><con:properties/><con:onRequestScript>log.info("This is from the request ${context} ${mockRequest.getClass().getName()}")
+log.info mockRequest.getRequestHeaders()
+log.info mockRequest.getProtocol()</con:onRequestScript></con:mockService><con:properties/><con:wssContainer/></con:soapui-project>

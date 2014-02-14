@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<mule xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns="http://www.mulesoft.org/schema/mule/core"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:spring="http://www.springframework.org/schema/beans"
+        xmlns:cxf="http://www.mulesoft.org/schema/mule/cxf"
+        xmlns:https="http://www.mulesoft.org/schema/mule/https"
+        xmlns:http="http://www.mulesoft.org/schema/mule/http"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd
+http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/https http://www.mulesoft.org/schema/mule/https/current/mule-https.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+
+        <message-properties-transformer name="httpVersionTransformer" doc:name="Message Properties">
+                <add-message-property key="http.version" value="${http.version}" />
+        </message-properties-transformer>
+
+        <flow name="AssertCareEngagement-domino-http-adapter-1" doc:name="AssertCareEngagement-domino-http-adapter-1">
+                <http:inbound-endpoint address="${inbound.endpoint.dominohttpadapter.1}" exchange-pattern="request-response" doc:name="HTTP" transformer-refs="logReqIn" responseTransformer-refs="logRespOut"/>
+                <https:outbound-endpoint exchange-pattern="request-response" address="${outbound.endpoint.dominohttpadapter.1}" transformer-refs="httpVersionTransformer logReqOut" responseTransformer-refs="logRespIn" doc:name="HTTPS"/>
+        </flow>
+
+        <flow name="AssertCareEngagement-domino-http-adapter-2" doc:name="AssertCareEngagement-domino-http-adapter-2">
+                <http:inbound-endpoint address="${inbound.endpoint.dominohttpadapter.2}" exchange-pattern="request-response" doc:name="HTTP" transformer-refs="logReqIn" responseTransformer-refs="logRespOut"/>
+                <https:outbound-endpoint exchange-pattern="request-response" address="${outbound.endpoint.dominohttpadapter.2}" transformer-refs="httpVersionTransformer logReqOut" responseTransformer-refs="logRespIn" doc:name="HTTPS"/>
+        </flow>
+
+        <flow name="AssertCareEngagement-domino-http-adapter-3" doc:name="AssertCareEngagement-domino-http-adapter-3">
+                <http:inbound-endpoint address="${inbound.endpoint.dominohttpadapter.3}" exchange-pattern="request-response" doc:name="HTTP" transformer-refs="logReqIn" responseTransformer-refs="logRespOut"/>
+                <https:outbound-endpoint exchange-pattern="request-response" address="${outbound.endpoint.dominohttpadapter.3}" transformer-refs="httpVersionTransformer logReqOut" responseTransformer-refs="logRespIn" doc:name="HTTPS"/>
+        </flow>
+
+        <flow name="AssertCareEngagement-domino-http-adapter-4" doc:name="AssertCareEngagement-domino-http-adapter-4">
+                <http:inbound-endpoint address="${inbound.endpoint.dominohttpadapter.4}" exchange-pattern="request-response" doc:name="HTTP" transformer-refs="logReqIn" responseTransformer-refs="logRespOut"/>
+                <https:outbound-endpoint exchange-pattern="request-response" address="${outbound.endpoint.dominohttpadapter.4}" transformer-refs="httpVersionTransformer logReqOut" responseTransformer-refs="logRespIn" doc:name="HTTPS"/>
+        </flow>
+
+        <flow name="AssertCareEngagement-domino-http-adapter-5" doc:name="AssertCareEngagement-domino-http-adapter-5">
+                <http:inbound-endpoint address="${inbound.endpoint.dominohttpadapter.5}" exchange-pattern="request-response" doc:name="HTTP" transformer-refs="logReqIn" responseTransformer-refs="logRespOut"/>
+                <https:outbound-endpoint exchange-pattern="request-response" address="${outbound.endpoint.dominohttpadapter.5}" transformer-refs="httpVersionTransformer logReqOut" responseTransformer-refs="logRespIn" doc:name="HTTPS"/>
+        </flow>
+
+        <flow name="AssertCareEngagement-domino-http-adapter-6" doc:name="AssertCareEngagement-domino-http-adapter-6">
+                <http:inbound-endpoint address="${inbound.endpoint.dominohttpadapter.6}" exchange-pattern="request-response" doc:name="HTTP" transformer-refs="logReqIn" responseTransformer-refs="logRespOut"/>
+                <https:outbound-endpoint exchange-pattern="request-response" address="${outbound.endpoint.dominohttpadapter.6}" transformer-refs="httpVersionTransformer logReqOut" responseTransformer-refs="logRespIn" doc:name="HTTPS"/>
+        </flow>
+
+        <flow name="AssertCareEngagement-domino-http-adapter-7" doc:name="AssertCareEngagement-domino-http-adapter-7">
+                <http:inbound-endpoint address="${inbound.endpoint.dominohttpadapter.7}" exchange-pattern="request-response" doc:name="HTTP" transformer-refs="logReqIn" responseTransformer-refs="logRespOut"/>
+                <https:outbound-endpoint exchange-pattern="request-response" address="${outbound.endpoint.dominohttpadapter.7}" transformer-refs="httpVersionTransformer logReqOut" responseTransformer-refs="logRespIn" doc:name="HTTPS"/>
+        </flow>
+
+        <flow name="AssertCareEngagement-domino-http-adapter-8" doc:name="AssertCareEngagement-domino-http-adapter-8">
+                <http:inbound-endpoint address="${inbound.endpoint.dominohttpadapter.8}" exchange-pattern="request-response" doc:name="HTTP" transformer-refs="logReqIn" responseTransformer-refs="logRespOut"/>
+                <https:outbound-endpoint exchange-pattern="request-response" address="${outbound.endpoint.dominohttpadapter.8}" transformer-refs="httpVersionTransformer logReqOut" responseTransformer-refs="logRespIn" doc:name="HTTPS"/>
+        </flow>
+
+        <flow name="AssertCareEngagement-domino-http-adapter-9" doc:name="AssertCareEngagement-domino-http-adapter-9">
+                <http:inbound-endpoint address="${inbound.endpoint.dominohttpadapter.9}" exchange-pattern="request-response" doc:name="HTTP" transformer-refs="logReqIn" responseTransformer-refs="logRespOut"/>
+                <https:outbound-endpoint exchange-pattern="request-response" address="${outbound.endpoint.dominohttpadapter.9}" transformer-refs="httpVersionTransformer logReqOut" responseTransformer-refs="logRespIn" doc:name="HTTPS"/>
+        </flow>
+
+        <flow name="AssertCareEngagement-domino-http-adapter-10" doc:name="AssertCareEngagement-domino-http-adapter-10">
+                <http:inbound-endpoint address="${inbound.endpoint.dominohttpadapter.10}" exchange-pattern="request-response" doc:name="HTTP" transformer-refs="logReqIn" responseTransformer-refs="logRespOut"/>
+                <https:outbound-endpoint exchange-pattern="request-response" address="${outbound.endpoint.dominohttpadapter.10}" transformer-refs="httpVersionTransformer logReqOut" responseTransformer-refs="logRespIn" doc:name="HTTPS"/>
+        </flow>
+
+        <flow name="AssertCareEngagement-domino-http-adapter-11" doc:name="AssertCareEngagement-domino-http-adapter-11">
+                <http:inbound-endpoint address="${inbound.endpoint.dominohttpadapter.11}" exchange-pattern="request-response" doc:name="HTTP" transformer-refs="logReqIn" responseTransformer-refs="logRespOut"/>
+                <https:outbound-endpoint exchange-pattern="request-response" address="${outbound.endpoint.dominohttpadapter.11}" transformer-refs="httpVersionTransformer logReqOut" responseTransformer-refs="logRespIn" doc:name="HTTPS"/>
+        </flow>
+
+        <flow name="AssertCareEngagement-domino-http-adapter-12" doc:name="AssertCareEngagement-domino-http-adapter-12">
+                <http:inbound-endpoint address="${inbound.endpoint.dominohttpadapter.12}" exchange-pattern="request-response" doc:name="HTTP" transformer-refs="logReqIn" responseTransformer-refs="logRespOut"/>
+                <https:outbound-endpoint exchange-pattern="request-response" address="${outbound.endpoint.dominohttpadapter.12}" transformer-refs="httpVersionTransformer logReqOut" responseTransformer-refs="logRespIn" doc:name="HTTPS"/>
+        </flow>
+
+        <flow name="AssertCareEngagement-domino-http-adapter-13" doc:name="AssertCareEngagement-domino-http-adapter-13">
+                <http:inbound-endpoint address="${inbound.endpoint.dominohttpadapter.13}" exchange-pattern="request-response" doc:name="HTTP" transformer-refs="logReqIn" responseTransformer-refs="logRespOut"/>
+                <https:outbound-endpoint exchange-pattern="request-response" address="${outbound.endpoint.dominohttpadapter.13}" transformer-refs="httpVersionTransformer logReqOut" responseTransformer-refs="logRespIn" doc:name="HTTPS"/>
+        </flow>
+        
+        <flow name="AssertCareEngagement-domino-http-adapter-14" doc:name="AssertCareEngagement-domino-http-adapter-14">
+                <http:inbound-endpoint address="${inbound.endpoint.dominohttpadapter.14}" exchange-pattern="request-response" doc:name="HTTP" transformer-refs="logReqIn" responseTransformer-refs="logRespOut"/>
+                <https:outbound-endpoint exchange-pattern="request-response" address="${outbound.endpoint.dominohttpadapter.14}" transformer-refs="httpVersionTransformer logReqOut" responseTransformer-refs="logRespIn" doc:name="HTTPS"/>
+        </flow>
+
+        <flow name="AssertCareEngagement-domino-http-adapter-15" doc:name="AssertCareEngagement-domino-http-adapter-15">
+                <http:inbound-endpoint address="${inbound.endpoint.dominohttpadapter.15}" exchange-pattern="request-response" doc:name="HTTP" transformer-refs="logReqIn" responseTransformer-refs="logRespOut"/>
+                <https:outbound-endpoint exchange-pattern="request-response" address="${outbound.endpoint.dominohttpadapter.15}" transformer-refs="httpVersionTransformer logReqOut" responseTransformer-refs="logRespIn" doc:name="HTTPS"/>
+        </flow>
+
+        <flow name="AssertCareEngagement-domino-http-adapter-16" doc:name="AssertCareEngagement-domino-http-adapter-16">
+                <http:inbound-endpoint address="${inbound.endpoint.dominohttpadapter.16}" exchange-pattern="request-response" doc:name="HTTP" transformer-refs="logReqIn" responseTransformer-refs="logRespOut"/>
+                <https:outbound-endpoint exchange-pattern="request-response" address="${outbound.endpoint.dominohttpadapter.16}" transformer-refs="httpVersionTransformer logReqOut" responseTransformer-refs="logRespIn" doc:name="HTTPS"/>
+        </flow>
+
+        <flow name="AssertCareEngagement-domino-http-adapter-17" doc:name="AssertCareEngagement-domino-http-adapter-17">
+                <http:inbound-endpoint address="${inbound.endpoint.dominohttpadapter.17}" exchange-pattern="request-response" doc:name="HTTP" transformer-refs="logReqIn" responseTransformer-refs="logRespOut"/>
+                <https:outbound-endpoint exchange-pattern="request-response" address="${outbound.endpoint.dominohttpadapter.17}" transformer-refs="httpVersionTransformer logReqOut" responseTransformer-refs="logRespIn" doc:name="HTTPS"/>
+        </flow>
+
+        <flow name="AssertCareEngagement-domino-http-adapter-18" doc:name="AssertCareEngagement-domino-http-adapter-18">
+                <http:inbound-endpoint address="${inbound.endpoint.dominohttpadapter.18}" exchange-pattern="request-response" doc:name="HTTP" transformer-refs="logReqIn" responseTransformer-refs="logRespOut"/>
+                <https:outbound-endpoint exchange-pattern="request-response" address="${outbound.endpoint.dominohttpadapter.18}" transformer-refs="httpVersionTransformer logReqOut" responseTransformer-refs="logRespIn" doc:name="HTTPS"/>
+        </flow>
+
+        <flow name="AssertCareEngagement-domino-http-adapter-19" doc:name="AssertCareEngagement-domino-http-adapter-19">
+                <http:inbound-endpoint address="${inbound.endpoint.dominohttpadapter.19}" exchange-pattern="request-response" doc:name="HTTP" transformer-refs="logReqIn" responseTransformer-refs="logRespOut"/>
+                <https:outbound-endpoint exchange-pattern="request-response" address="${outbound.endpoint.dominohttpadapter.19}" transformer-refs="httpVersionTransformer logReqOut" responseTransformer-refs="logRespIn" doc:name="HTTPS"/>
+        </flow>
+
+        <flow name="AssertCareEngagement-domino-http-adapter-20" doc:name="AssertCareEngagement-domino-http-adapter-20">
+                <http:inbound-endpoint address="${inbound.endpoint.dominohttpadapter.20}" exchange-pattern="request-response" doc:name="HTTP" transformer-refs="logReqIn" responseTransformer-refs="logRespOut"/>
+                <https:outbound-endpoint exchange-pattern="request-response" address="${outbound.endpoint.dominohttpadapter.20}" transformer-refs="httpVersionTransformer logReqOut" responseTransformer-refs="logRespIn" doc:name="HTTPS"/>
+        </flow>
+
+        <flow name="AssertCareEngagement-domino-http-adapter-21" doc:name="AssertCareEngagement-domino-http-adapter-21">
+                <http:inbound-endpoint address="${inbound.endpoint.dominohttpadapter.21}" exchange-pattern="request-response" doc:name="HTTP" transformer-refs="logReqIn" responseTransformer-refs="logRespOut"/>
+                <https:outbound-endpoint exchange-pattern="request-response" address="${outbound.endpoint.dominohttpadapter.21}" transformer-refs="httpVersionTransformer logReqOut" responseTransformer-refs="logRespIn" doc:name="HTTPS"/>
+        </flow>
+
+        <flow name="AssertCareEngagement-domino-http-adapter-22" doc:name="AssertCareEngagement-domino-http-adapter-22">
+                <http:inbound-endpoint address="${inbound.endpoint.dominohttpadapter.22}" exchange-pattern="request-response" doc:name="HTTP" transformer-refs="logReqIn" responseTransformer-refs="logRespOut"/>
+                <https:outbound-endpoint exchange-pattern="request-response" address="${outbound.endpoint.dominohttpadapter.22}" transformer-refs="httpVersionTransformer logReqOut" responseTransformer-refs="logRespIn" doc:name="HTTPS"/>
+        </flow>
+
+        <flow name="AssertCareEngagement-domino-http-adapter-23" doc:name="AssertCareEngagement-domino-http-adapter-23">
+                <http:inbound-endpoint address="${inbound.endpoint.dominohttpadapter.23}" exchange-pattern="request-response" doc:name="HTTP" transformer-refs="logReqIn" responseTransformer-refs="logRespOut"/>
+                <https:outbound-endpoint exchange-pattern="request-response" address="${outbound.endpoint.dominohttpadapter.23}" transformer-refs="httpVersionTransformer logReqOut" responseTransformer-refs="logRespIn" doc:name="HTTPS"/>
+        </flow>
+
+        <flow name="AssertCareEngagement-domino-http-adapter-24" doc:name="AssertCareEngagement-domino-http-adapter-24">
+                <http:inbound-endpoint address="${inbound.endpoint.dominohttpadapter.24}" exchange-pattern="request-response" doc:name="HTTP" transformer-refs="logReqIn" responseTransformer-refs="logRespOut"/>
+                <https:outbound-endpoint exchange-pattern="request-response" address="${outbound.endpoint.dominohttpadapter.24}" transformer-refs="httpVersionTransformer logReqOut" responseTransformer-refs="logRespIn" doc:name="HTTPS"/>
+        </flow>
+
+        <flow name="AssertCareEngagement-domino-http-adapter-25" doc:name="AssertCareEngagement-domino-http-adapter-25">
+                <http:inbound-endpoint address="${inbound.endpoint.dominohttpadapter.25}" exchange-pattern="request-response" doc:name="HTTP" transformer-refs="logReqIn" responseTransformer-refs="logRespOut"/>
+                <https:outbound-endpoint exchange-pattern="request-response" address="${outbound.endpoint.dominohttpadapter.25}" transformer-refs="httpVersionTransformer logReqOut" responseTransformer-refs="logRespIn" doc:name="HTTPS"/>
+        </flow>
+
+        <flow name="AssertCareEngagement-domino-http-adapter-26" doc:name="AssertCareEngagement-domino-http-adapter-26">
+                <http:inbound-endpoint address="${inbound.endpoint.dominohttpadapter.26}" exchange-pattern="request-response" doc:name="HTTP" transformer-refs="logReqIn" responseTransformer-refs="logRespOut"/>
+                <https:outbound-endpoint exchange-pattern="request-response" address="${outbound.endpoint.dominohttpadapter.26}" transformer-refs="httpVersionTransformer logReqOut" responseTransformer-refs="logRespIn" doc:name="HTTPS"/>
+        </flow>
+
+        <flow name="AssertCareEngagement-domino-http-adapter-27" doc:name="AssertCareEngagement-domino-http-adapter-27">
+                <http:inbound-endpoint address="${inbound.endpoint.dominohttpadapter.27}" exchange-pattern="request-response" doc:name="HTTP" transformer-refs="logReqIn" responseTransformer-refs="logRespOut"/>
+                <https:outbound-endpoint exchange-pattern="request-response" address="${outbound.endpoint.dominohttpadapter.27}" transformer-refs="httpVersionTransformer logReqOut" responseTransformer-refs="logRespIn" doc:name="HTTPS"/>
+        </flow>
+
+        <flow name="AssertCareEngagement-domino-http-adapter-28" doc:name="AssertCareEngagement-domino-http-adapter-28">
+                <http:inbound-endpoint address="${inbound.endpoint.dominohttpadapter.28}" exchange-pattern="request-response" doc:name="HTTP" transformer-refs="logReqIn" responseTransformer-refs="logRespOut"/>
+                <https:outbound-endpoint exchange-pattern="request-response" address="${outbound.endpoint.dominohttpadapter.28}" transformer-refs="httpVersionTransformer logReqOut" responseTransformer-refs="logRespIn" doc:name="HTTPS"/>
+        </flow>
+
+        <flow name="AssertCareEngagement-domino-http-adapter-29" doc:name="AssertCareEngagement-domino-http-adapter-29">
+                <http:inbound-endpoint address="${inbound.endpoint.dominohttpadapter.29}" exchange-pattern="request-response" doc:name="HTTP" transformer-refs="logReqIn" responseTransformer-refs="logRespOut"/>
+                <https:outbound-endpoint exchange-pattern="request-response" address="${outbound.endpoint.dominohttpadapter.29}" transformer-refs="httpVersionTransformer logReqOut" responseTransformer-refs="logRespIn" doc:name="HTTPS"/>
+        </flow>
+        
+        <flow name="AssertCareEngagement-domino-http-adapter-30" doc:name="AssertCareEngagement-domino-http-adapter-30">
+                <http:inbound-endpoint address="${inbound.endpoint.dominohttpadapter.30}" exchange-pattern="request-response" doc:name="HTTP" transformer-refs="logReqIn" responseTransformer-refs="logRespOut"/>
+                <https:outbound-endpoint exchange-pattern="request-response" address="${outbound.endpoint.dominohttpadapter.30}" transformer-refs="httpVersionTransformer logReqOut" responseTransformer-refs="logRespIn" doc:name="HTTPS"/>
+        </flow>                                                                                                                                                                                                                                                                 
+</mule>
