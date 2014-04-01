@@ -1,11 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- 
-DON'T CHANGE THE CONTENT OF THIS COMMENT UNLESS YOU REALLY KNOW WHAT YOU ARE DOING!
-[soi-toolkit.gen.version=0.6.1-M4]
-[soi-toolkit.gen.type=services]
-[soi-toolkit.gen.createDate=2014-01-21T14:45:03.753+01:00]
-[soi-toolkit.gen.artifactId=DominoHttp10Adapter]
--->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
@@ -17,10 +10,10 @@ DON'T CHANGE THE CONTENT OF THIS COMMENT UNLESS YOU REALLY KNOW WHAT YOU ARE DOI
     </parent>
     
     <groupId>se.skltp.adapterservices.ehr.accesscontrol</groupId>
-    <artifactId>DominoHttp10Adapter</artifactId>
+    <artifactId>DominoHttp10Adapter-parent</artifactId>
     <version>2.0.0-RC3-SNAPSHOT</version>
-    <packaging>mule</packaging>
-    <name>DominoHttp10Adapter</name>
+    <packaging>pom</packaging>
+    <name>${project.artifactId}</name>
 
 	<scm>
 		<connection>http://skltpservices.googlecode.com/svn/AdapterServices/riv.ehr.accesscontrol/DominoHttp10Adapter/trunk</connection>
@@ -28,7 +21,11 @@ DON'T CHANGE THE CONTENT OF THIS COMMENT UNLESS YOU REALLY KNOW WHAT YOU ARE DOI
 		<url>http://skltpservices.googlecode.com/svn/AdapterServices/riv.ehr.accesscontrol/DominoHttp10Adapter/trunk</url>
 	</scm>
 
-    
+	<modules>
+    	<module>DominoHttp10AdapterService</module>
+    	<module>DominoHttp10AdapterService-test</module>
+    </modules>
+
 	<dependencies>	
 		<dependency>
 		  <groupId>org.soitoolkit.commons.components</groupId>
@@ -49,201 +46,70 @@ DON'T CHANGE THE CONTENT OF THIS COMMENT UNLESS YOU REALLY KNOW WHAT YOU ARE DOI
 			<artifactId>soitoolkit-mule-3.3.1-dependencies</artifactId>
 			<version>${soitoolkit.version}</version>
 			<type>pom</type>
-		</dependency>
-
- 		
-	</dependencies> 
+		</dependency>		
+	</dependencies>
 
     <build>
-        <resources>
-            <resource>
-                <directory>${basedir}/src/main/resources</directory>
-            </resource>
-            <resource>
-                <!-- To get mule-config files from the Mule Studio defined resource-folder in the classpath... -->
-                <directory>${basedir}/src/main/app</directory>
-            </resource>
-        </resources>
-
 		<plugins>   
             <plugin>
-                <!-- Add mule-nature to the eclipse-.project-file -->
-                <artifactId>maven-eclipse-plugin</artifactId>
-                <configuration>
-                    <additionalBuildcommands>
-                        <buildcommand>org.mule.tooling.core.muleBuilder</buildcommand>
-                    </additionalBuildcommands>
-                    <additionalProjectnatures>
-                        <projectnature>org.mule.tooling.core.muleNature</projectnature>
-                    </additionalProjectnatures>
-                </configuration>
+               <groupId>com.mycila.maven-license-plugin</groupId>
+        		<artifactId>maven-license-plugin</artifactId>
+        		<version>1.10.b1</version>
+        		<configuration>
+          			<properties>
+            			<year>2014</year>
+            			<organization>Inera AB &lt;http://www.inera.se/&gt;</organization>
+            			<product>SKLTP</product>
+          			</properties>
+          			<strictCheck>true</strictCheck>
+          			<header>http://skltp.googlecode.com/svn/tp/docs/license-header-template.txt</header>
+          			<encoding>UTF-8</encoding>
+          			<includes>
+            			<include>src/main/**</include>
+            			<include>src/test/**</include>
+          			</includes>
+          			<excludes>
+            			<exclude>**/*.xsd</exclude>
+            			<exclude>**/*.xml</exclude>
+            			<exclude>**/*.wsdl</exclude>
+            			<exclude>**/*.dtd</exclude>
+            			<exclude>**/*.jks</exclude>
+            			<exclude>**/*.mflow</exclude>
+          			</excludes>
+          			<useDefaultExcludes>true</useDefaultExcludes>
+          			<mapping>
+            			<tag>DYNASCRIPT_STYLE</tag>
+          			</mapping>
+          			<useDefaultMapping>true</useDefaultMapping>
+        		</configuration>
             </plugin>
-
-            <plugin>
-                <groupId>org.mule.tools</groupId>
-                <artifactId>maven-mule-plugin</artifactId>
-                <extensions>true</extensions>
-                <!-- Include mule-dependencies that doesn't come with Mule 3.x otherwise we can't install to a vanilla Mule 3.x installation -->
-                <configuration>
-                    <inclusions>
-                        <inclusion>
-                            <groupId>org.mule.modules</groupId>
-                            <artifactId>mule-module-rest-router</artifactId>
-                        </inclusion>
-                        <inclusion>
-                            <groupId>org.mule.modules</groupId>
-                            <artifactId>devkit</artifactId>
-                        </inclusion>
-                    </inclusions>
-                    <exclusions>
-
-                      <!-- xercesImpl is endorsed in MULE_HOME/lib/endorsed, see issue 274 -->
-                      <exclusion>
-                        <groupId>xerces</groupId>
-                        <artifactId>xercesImpl</artifactId>
-                      </exclusion>
-
-                      <!-- log4j is already included in MULE_HOME/lib/boot, see issue 283 -->
-                      <exclusion>
-						<groupId>log4j</groupId>
-						<artifactId>log4j</artifactId>
-                      </exclusion>
-
-                      <!-- junit is already included in MULE_HOME/lib/opt, see issue 283 -->
-                      <exclusion>
-						<groupId>junit</groupId>
-						<artifactId>junit</artifactId>
-                      </exclusion>
-
-                      <!-- servlet-api-2.5 is already included in MULE_HOME/lib/opt, see issue 283 -->
-                      <exclusion>
-						<groupId>org.mortbay.jetty</groupId>
-						<artifactId>servlet-api-2.5</artifactId>
-                      </exclusion>
-
-                      <!-- jug is already included in MULE_HOME/lib/opt, see issue 283 -->
-                      <exclusion>
-						<groupId>org.safehaus.jug</groupId>
-						<artifactId>jug.osgi</artifactId>
-                      </exclusion>
-                      <!-- activemq needs to be added manually to MULE_HOME/lib/user if required, see issue 283 -->
-                      <exclusion>
-						<groupId>org.apache.activemq</groupId>
-						<artifactId>activemq-core</artifactId>
-                      </exclusion>
-                      <exclusion>
-						<groupId>org.apache.xbean</groupId>
-						<artifactId>xbean-spring</artifactId>
-                      </exclusion>
-
-                      <!-- hornetq needs to be added manually to MULE_HOME/lib/user if required, see issue 283 -->
-                      <exclusion>
-						<groupId>org.hornetq</groupId>
-						<artifactId>hornetq-core-client</artifactId>
-                      </exclusion>
-                      <exclusion>
-				        <groupId>org.hornetq</groupId>
-				        <artifactId>hornetq-jms</artifactId>
-                      </exclusion>
-                      <exclusion>
-						<groupId>org.jboss.netty</groupId>
-						<artifactId>netty</artifactId>
-                      </exclusion>
-
-                      <!-- jtds (JDBC driver fpr Microsoft SQL Server) needs to be added manually to MULE_HOME/lib/user if required, see issue 283 -->
-                      <exclusion>
-						<groupId>net.sourceforge.jtds</groupId>
-						<artifactId>jtds</artifactId>
-                      </exclusion>
-
-                    </exclusions>
-                </configuration>
-            </plugin>
-            
-            <plugin>
-              <artifactId>maven-jar-plugin</artifactId>
-              <configuration>
-                <!-- 
-                 if no classifier is declared, then a mvn install results in a file in
-                 the local repo: ic2-1.0.0-SNAPSHOT.mule
-                 which is a jar-file - only strangely named and with a bad extension
-                -->
-                <classifier>core</classifier>
-                <excludes>
-                  <exclude>log4j.xml</exclude>
-                </excludes>
-              </configuration>
-              <executions>
-                <execution>
-                  <goals>
-                    <goal>jar</goal>
-                  </goals>
-                </execution>
-              </executions>
-            </plugin>
-		    <plugin>
-			  <artifactId>maven-resources-plugin</artifactId>
-			  <executions>
-			    <execution>
-			    <id>copy-log4j-resource</id>
-			    <phase>prepare-package</phase>
-				<goals>
-			      <goal>copy-resources</goal>
-			    </goals>
-				<configuration>
-				<!--<outputDirectory>target/classes</outputDirectory> -->
-				<outputDirectory>${project.build.outputDirectory}</outputDirectory>
-				<resources>
-				  <resource>
-				    <directory>src/environment</directory>
-					  <includes>
-					    <include>log4j.xml</include>
-					    <include>log4j.dtd</include>
-					  </includes>
-				  </resource>
-				</resources>
-			  </configuration>
-		    </execution>
-		  </executions>
-		</plugin>
-		
-
-		
       </plugins>
-
     </build>
-
+    
     <profiles>
-        <profile>
-            <id>muleServer</id>
-            <!-- Start mule server with the command "mvn -PmuleServer" or "mvn -PmuleServer -Dexec.args="${artifaceId}-config.xml"" if you want to override the default config-file -->
+    	<profile>
+    		<id>license</id>
+    		<activation>
+    			<activeByDefault>false</activeByDefault>
+            </activation>
             <build>
-                <defaultGoal>test</defaultGoal>
-                <plugins>
-                    <plugin>
-                        <groupId>org.codehaus.mojo</groupId>
-                        <artifactId>exec-maven-plugin</artifactId>
-                        <executions>
-                            <execution>
-                                <phase>test</phase>
-                                <goals>
-                                    <goal>java</goal>
-                                </goals>
-                                <configuration>
-                                    <mainClass>se.skltp.adapterservices.ehr.accesscontrol.dominohttp10adapter.DominoHttp10AdapterMuleServer</mainClass>
-                                    <classpathScope>test</classpathScope>
-                                </configuration>
-                            </execution>
-                        </executions>
-                    </plugin>
-                    <plugin>
-                        <artifactId>maven-surefire-plugin</artifactId>
-                        <configuration>
-                            <skip>true</skip>
-                        </configuration>
-                    </plugin>
-                </plugins>
-            </build>
+            	<plugins>
+            		<plugin>
+            			<groupId>com.mycila.maven-license-plugin</groupId>
+            			<artifactId>maven-license-plugin</artifactId>
+            			<executions>
+            				<execution>
+            					<id>check</id>
+            					<phase>compile</phase>
+            					<goals>
+            						<goal>check</goal>
+            					</goals>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
         </profile>
     </profiles>
+    
 </project>
