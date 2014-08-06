@@ -27,6 +27,13 @@
     </modules>
 
 	<dependencies>	
+		<!-- itintegration monitoring schemas för PingForConfiguration -->
+		<dependency>
+		  	<groupId>se.skltp.itintegration.monitoring</groupId>
+  			<artifactId>ServiceContracts_itintegration_monitoring</artifactId>
+			<version>1.0</version>
+		</dependency>
+		
 		<dependency>
 		  <groupId>org.soitoolkit.commons.components</groupId>
 			<artifactId>soitoolkit-commons-mule</artifactId>
