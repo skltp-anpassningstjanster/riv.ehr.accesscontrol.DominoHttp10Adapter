@@ -22,7 +22,13 @@ DON'T CHANGE THE CONTENT OF THIS COMMENT UNLESS YOU REALLY KNOW WHAT YOU ARE DOI
     <packaging>mule</packaging>
     <name>${project.artifactId}</name>
 
-	<dependencies>	
+	<dependencies>
+		<dependency>
+			<groupId>se.skltp.commons</groupId>
+			<artifactId>tp-commons-mule</artifactId>
+			<version>1.0.1</version>
+		</dependency>
+
 		<dependency>
 		  <groupId>org.soitoolkit.commons.components</groupId>
 			<artifactId>soitoolkit-commons-mule</artifactId>

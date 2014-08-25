@@ -119,7 +119,8 @@
     <rest-router:config />
 
     <spring:beans>
-  
+      <!-- import the common logger config -->
+      <spring:import resource="classpath:tp-commons-mule-logging.xml" />
     </spring:beans>
 
     <message-properties-transformer name="setJsonContentType" scope="outbound">
