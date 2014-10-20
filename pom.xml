@@ -8,7 +8,7 @@
         <artifactId>soitoolkit-default-parent</artifactId>
         <version>0.6.1</version>
     </parent>
-    
+
     <groupId>se.skltp.adapterservices.ehr.accesscontrol</groupId>
     <artifactId>DominoHttp10Adapter-parent</artifactId>
     <version>2.0.2-SNAPSHOT</version>
@@ -16,9 +16,10 @@
     <name>${project.artifactId}</name>
 
 	<scm>
-		<connection>http://skltpservices.googlecode.com/svn/AdapterServices/riv.ehr.accesscontrol/DominoHttp10Adapter/trunk</connection>
-		<developerConnection>scm:svn:https://skltpservices.googlecode.com/svn/AdapterServices/riv.ehr.accesscontrol/DominoHttp10Adapter/trunk</developerConnection>
-		<url>http://skltpservices.googlecode.com/svn/AdapterServices/riv.ehr.accesscontrol/DominoHttp10Adapter/trunk</url>
+		<url>https://github.com/skltp-anpassningstjanster/riv.ehr.accesscontrol.DominoHttp10Adapter</url>
+		<connection>scm:git:git://github.com/skltp-anpassningstjanster/riv.ehr.accesscontrol.DominoHttp10Adapter.git</connection>
+		<developerConnection>scm:git:git://github.com/skltp-anpassningstjanster/riv.ehr.accesscontrol.DominoHttp10Adapter.git</developerConnection>
+		<tag>HEAD</tag>
 	</scm>
 
 	<modules>
@@ -26,14 +27,14 @@
     	<module>DominoHttp10AdapterService-test</module>
     </modules>
 
-	<dependencies>	
+	<dependencies>
 		<!-- itintegration monitoring schemas för PingForConfiguration -->
 		<dependency>
 		  	<groupId>se.skltp.itintegration.monitoring</groupId>
   			<artifactId>ServiceContracts_itintegration_monitoring</artifactId>
 			<version>1.0</version>
 		</dependency>
-		
+
 		<dependency>
 		  <groupId>org.soitoolkit.commons.components</groupId>
 			<artifactId>soitoolkit-commons-mule</artifactId>
@@ -53,11 +54,26 @@
 			<artifactId>soitoolkit-mule-3.3.1-dependencies</artifactId>
 			<version>${soitoolkit.version}</version>
 			<type>pom</type>
-		</dependency>		
+		</dependency>
 	</dependencies>
 
     <build>
-		<plugins>   
+			<pluginManagement>
+				<plugins>
+					<plugin>
+							<groupId>org.apache.maven.plugins</groupId>
+							<artifactId>maven-release-plugin</artifactId>
+							<version>2.5.1</version>
+							<configuration>
+									<autoVersionSubmodules>true</autoVersionSubmodules>
+									<tagNameFormat>v@{project.version}</tagNameFormat>
+									<pushChanges>false</pushChanges>
+									<localCheckout>true</localCheckout>
+							</configuration>
+					</plugin>
+				</plugins>
+			</pluginManagement>
+			<plugins>
             <plugin>
                <groupId>com.mycila.maven-license-plugin</groupId>
         		<artifactId>maven-license-plugin</artifactId>
@@ -92,7 +108,7 @@
             </plugin>
       </plugins>
     </build>
-    
+
     <profiles>
     	<profile>
     		<id>license</id>
@@ -118,5 +134,5 @@
 			</build>
         </profile>
     </profiles>
-    
+
 </project>
