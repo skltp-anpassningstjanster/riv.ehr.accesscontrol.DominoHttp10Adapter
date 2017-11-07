@@ -81,11 +81,11 @@
         		<configuration>
           			<properties>
             			<year>2014</year>
-            			<organization>Inera AB &lt;http://www.inera.se/&gt;</organization>
-            			<product>SKLTP</product>
+                        <copyright>Inera AB, &lt;http://inera.se/&gt;</copyright>
+                        <product>SKLTP</product>
           			</properties>
           			<strictCheck>true</strictCheck>
-          			<header>http://skltp.googlecode.com/svn/tp/docs/license-header-template.txt</header>
+          			<header>https://raw.githubusercontent.com/skltp/license/develop/header.txt</header>
           			<encoding>UTF-8</encoding>
           			<includes>
             			<include>src/main/**</include>
