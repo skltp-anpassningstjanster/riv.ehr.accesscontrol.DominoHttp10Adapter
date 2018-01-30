@@ -1,0 +1,8 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:riv:ehr:accesscontrol:AssertCareEngagementResponder:1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <urn:AssertCareEngagementResponse>
+         <urn:HasCareEngagement>True</urn:HasCareEngagement>
+      </urn:AssertCareEngagementResponse>
+   </soapenv:Body>
+</soapenv:Envelope>

@@ -1,0 +1,13 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:add="http://www.w3.org/2005/08/addressing" xmlns:urn="urn:riv:ehr:accesscontrol:AssertCareEngagementResponder:1">
+   <soapenv:Header>
+      <add:To>LA1</add:To>
+   </soapenv:Header>
+   <soapenv:Body>
+      <urn:AssertCareEngagement>
+         <urn:performer>P</urn:performer>
+         <urn:subjectOfCareId>S</urn:subjectOfCareId>
+         <urn:careUnitHsaIdentity>CU</urn:careUnitHsaIdentity>
+         <urn:careGiverHsaIdentity>CG</urn:careGiverHsaIdentity>
+      </urn:AssertCareEngagement>
+   </soapenv:Body>
+</soapenv:Envelope>
