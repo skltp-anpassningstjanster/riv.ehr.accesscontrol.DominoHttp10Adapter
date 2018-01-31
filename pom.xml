@@ -21,6 +21,11 @@
 		<developerConnection>scm:git:git://github.com/skltp-anpassningstjanster/riv.ehr.accesscontrol.DominoHttp10Adapter.git</developerConnection>
 		<tag>HEAD</tag>
 	</scm>
+    
+    <properties>
+		<compiler.target.version>1.7</compiler.target.version>
+		<compiler.source.version>1.7</compiler.source.version>       
+	</properties>
 
 	<modules>
     	<module>DominoHttp10AdapterService</module>
