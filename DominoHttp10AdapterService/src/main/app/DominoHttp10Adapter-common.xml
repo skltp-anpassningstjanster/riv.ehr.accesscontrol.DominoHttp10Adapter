@@ -167,6 +167,11 @@
     <custom-transformer name="logReqOut" class="org.soitoolkit.commons.mule.log.LogTransformer">
 		<spring:property name="logType"     value="req-out"/>
         <spring:property name="jaxbContext" ref="jaxbContext"/>
+        <spring:property name="extraInfo">
+            <spring:map>
+                <spring:entry key="originalServiceconsumerHsaid" value="#[message.inboundProperties['x-rivta-original-serviceconsumer-hsaid']]" />
+            </spring:map>
+        </spring:property>
     </custom-transformer>
 
     <custom-transformer name="logRespIn" class="org.soitoolkit.commons.mule.log.LogTransformer">
